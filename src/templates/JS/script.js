@@ -74,3 +74,9 @@ function showSSlides(n) {
   slides[SslideIndex-1].style.display = "block";  
   dots[SslideIndex-1].className += " active";
 }
+
+
+function menuToggle() {
+  const toggleMenu = document.getElementById("userprofile");
+  toggleMenu.classList.toggle("active");
+}

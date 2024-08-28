@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'CSS/dashboard.css' %}" />
+<script src="{% static 'JS/dashboard.js' %}" ></script>
+{% endblock styles %}
+
+{% block content %}
+    <div class="profileCard">
+        <div class="categories">
+            <ul>
+                <li class="active border-tl" onclick="settingShow('personal')">
+                    <i class='bx bx-user'></i>
+                    <span>Personal Details</span>
+                </li>
+                <li onclick="settingShow('farm')">
+                    <i class='bx bx-info-circle'></i>
+                    <span>Farm Details</span>
+                </li>
+                <li>
+                    <i class='bx bx-lock-alt' ></i>
+                    <span>Security</span>
+                </li>
+            </ul>
+        </div>
+        <div class="profile-details">
+            <div id="personal" class="detailSection">
+                <h3>Account</h3>
+                <span class="text-xs text-gray">Your account details that were shared to us.</span>
+                
+                <div class="row">
+                    <div class="detail">
+                        <label>Full Name</label>
+                        <input readonly value="{{user.name}}">
+                    </div>
+                    <div class="detail">
+                        <label>Date of Birth</label>
+                        <input readonly value="{{user.dob|date:'d M Y'}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="detail">
+                        <label>Full Name</label>
+                        <input readonly value="{{user.name}}">
+                    </div>
+                    <div class="detail">
+                        <label>Full Name</label>
+                        <input readonly value="{{user.name}}">
+                    </div>
+                </div>
+            </div>
+            <div id="farm" class="hidden detailSection">
+                <h3>Account</h3>
+                <span class="text-xs text-gray">Your account details that were shared to us.</span>
+                
+                <div class="row">
+                    <div class="detail">
+                        <label>Farm Type</label>
+                        <input readonly value="{{user.ownership}}">
+                    </div>
+                    <div class="detail">
+                        <label>Date of Birth</label>
+                        <input readonly value="{{user.dob|date:'d M Y'}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+{% endblock content %}
+

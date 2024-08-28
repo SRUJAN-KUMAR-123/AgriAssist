@@ -14,12 +14,15 @@ body {
 }
 .nav {
   position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 200px;
-  background: #4a98f7;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* background: white; */
+  background-image: url("/static/images/grainy_landscape.jpg");
+  border-bottom: 2px solid black;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
 }
 .nav,
 .nav .nav-links {
@@ -31,7 +34,7 @@ body {
   position: fixed;
 }
 .nav a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   font-size: 18.5px;
 }
@@ -39,7 +42,7 @@ body {
 .nav  .nav-links a:hover{
     font-size: larger;
     color:rgb(252, 252, 252);
-    background-color: rgb(37, 120, 230);
+    /* background-color: rgba(234, 234, 234, 0.553); */
     border-radius: 5px;
     padding: 5px;
 }
@@ -64,13 +67,13 @@ body {
   pointer-events: none;
 }
 .nav .search-icon {
-  color: #fff;
+  color: black;
   font-size: 20px;
   cursor: pointer;
 }
 .nav .search-box {
   position: absolute;
-  right: 250px;
+  /* right: 250px; */
   height: 45px;
   max-width: 555px;
   width: 100%;
@@ -87,7 +90,7 @@ body {
   left: 15px;
   top: 50%;
   left: 15px;
-  color: #4a98f7;
+  color: black;
   transform: translateY(-50%);
 }
 .search-box input {
@@ -102,11 +105,12 @@ body {
 
 .nav .navOpenBtn,
 .nav .navCloseBtn {
+  z-index: 999;
   display: none;
 }
 
 .nav .a:hover{
-    font-size: ;
+    font-size: 999;
 }
 
 
@@ -122,10 +126,10 @@ body {
   gap: 30px;
   justify-content: space-between;
   /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
-
-  background: url(./images/bg-dot.png), url(./images/bg-dot.png), url(./images/bg-round.png), url(./images/bg-tree.png),linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  background-position: 10px 10px, bottom 215px right 10px, left 55% top -1%, left 45% bottom -1px, center;
-  background-repeat: no-repeat;
+  background-image: url("/static/images/grainy.jpg");
+  /* background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+  /* background-position: 0px 0px, bottom 215px right 10px, left 55% top -1%, left 45% bottom -1px, center; */
+  background-repeat: repeat-x;
 }
 .hero .curveImg {
   position: absolute;
@@ -153,11 +157,14 @@ body {
   color: #11101d;
 }
 .hero .row p {
-  color: #ffffff;
+  color: black;
+  line-height: 1.8rem;
   font-size: 20px;
 }
 .hero .row h2 {
-  font-size: 36px;
+  color: white;
+  line-height: 3.5rem;
+  font-size: 40px;
   margin-bottom: 16px;
 }
 .hero .column {
@@ -204,7 +211,7 @@ body {
     padding: 15px 100px;
   }
   .nav .search-box {
-    right: 150px;
+    /* right: 150px; */
   }
 }
 @media screen and (max-width: 950px) {
@@ -212,11 +219,14 @@ body {
     padding: 15px 50px;
   }
   .nav .search-box {
-    right: 100px;
+    /* right: 100px; */
     max-width: 400px;
   }
 }
 @media screen and (max-width: 800px) {
+  .nav .search-box, #searchIcon { 
+    display: none;
+  }
   .nav .navOpenBtn,
   .nav .navCloseBtn {
     display: block;
@@ -234,7 +244,7 @@ body {
     padding-top: 100px;
     row-gap: 30px;
     flex-direction: column;
-    background-color: #11101d;
+    background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     z-index: 100;
@@ -243,7 +253,7 @@ body {
     left: 0;
   }
   .nav .navOpenBtn {
-    color: #fff;
+    color: black;
     font-size: 20px;
     cursor: pointer;
   }
@@ -251,7 +261,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    color: #fff;
+    color: black;
     font-size: 20px;
     cursor: pointer;
   }
@@ -271,10 +281,19 @@ body {
   max-width: 1000px;
   position: relative;
   margin: auto;
-  border-radius: 2em;
+  border-radius: .5em;
   z-index: 1;
 }
 
+.hero .column1 .mySlides img {
+  box-shadow: 8px 8px 10px black;
+}
+
+.hero .column1 .mySlides img {
+  width: 100%;
+  height: 100%;
+  border-radius: .3em;
+}
 /* Next & previous buttons */
 .hero .column1 .prev, .next {
   cursor: pointer;
@@ -302,6 +321,14 @@ body {
   background-color: rgba(0,0,0,0.8);
 }
 
+.hero .column1 .dotCarousel {
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 /* The dots/bullets/indicators */
 .hero .column1 .dot {
   cursor: pointer;
@@ -324,6 +351,16 @@ body {
   animation-duration: 1.5s;
 }
 
+.uil-times {
+  z-index: 999;
+}
+
+
+//
+
+
+
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -334,3 +371,135 @@ body {
   .prev, .next,.text {font-size: 11px}
 }
 
+.action {
+  position: relative;
+  z-index: 999;
+  /* position: fixed;
+  top: 20px;
+  right: 30px; */
+}
+
+.action .profile {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.action .profile:hover {
+  transition: .3s ease-in-out;
+  border: 1px solid white;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action i{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.action i:hover{
+  transition: .3s ease-out;
+  /* padding: 5px 0; */
+  /* background-color: white; */
+  color: white !important;
+
+}
+.action .menu {
+  z-index: 10;
+  position: absolute;
+  top: 50px;
+  right: -20px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu a {
+  font-size: 16px;
+}
+
+.action .menu.active {
+  top: 50px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 0;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
+  font-size: 16px;
+  background-color: inherit;
+  padding: 0 0;
+}

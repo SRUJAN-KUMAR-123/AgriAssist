@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <!-- Hero Start -->
+  <section class="hero">
+  <div class="row container">
+    <div class="column">
+      <h2>Welcome to Agri Assist! <br />Empowering Farmers with Community & Direct Sales</h2>
+      <p>Agri Assist was created to make farming easier and more profitable. We bring together the latest technology and the wisdom of experienced farmers to help you grow more and earn more.Sell your products directly to customers, ensuring you get the best price for your hard work.</p>
+      <div class="buttons">
+        <button class="btn">Read More</button>
+        <button class="btn">Contact Us</button>
+      </div>
+    </div>
+    <div class="column1">
+      <!-- <img src="images/farmer.jpeg" alt="heroImg" class="hero_img" /> -->
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">1 / 3</div> -->
+          <img src="{% static 'images/farmer.jpeg' %}">
+          <!-- <div class="text">Caption Text</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">2 / 3</div> -->
+          <img src="{% static 'images/farmersgroup.jpeg' %}">
+          <!-- <div class="text">Caption Two</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">3 / 3</div> -->
+          <img src="{% static 'images/farmersells.jpeg '%}">
+          <!-- <div class="text">Caption Three</div> -->
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        <div style="text-align:center;" class="dotCarousel">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <!-- <br> -->
+      </div>
+    </div>
+  </div>
+  <img src="{% static 'images/bg-bottom-hero.png '%}" alt="" class="curveImg"  />
+</section>
+<!-- Hero End-->
+{% endblock %}
