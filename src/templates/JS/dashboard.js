@@ -1,8 +1,13 @@
-function settingShow(targetId) {
+function settingShow(elem, targetId) {
+    categoriesSideElems = document.querySelectorAll(".categories ul li");
     detailSection = document.getElementsByClassName("profile-details")[0];
     allDetails = detailSection.querySelectorAll(".detailSection");
-    allDetails.forEach(element => {
-        element.style.display = 'none';
+    categoriesSideElems.forEach(element => {
+        element.classList.remove("active");
     });
-    detailSection.querySelector('#'+targetId).style.display = 'block';
+    allDetails.forEach(element => {
+        element.style.visibility = 'hidden';
+    });
+    elem.classList.add("active");
+    detailSection.querySelector('#'+targetId).style.visibility = 'visible';
 }
