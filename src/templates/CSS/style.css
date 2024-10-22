@@ -202,6 +202,72 @@ body {
   position: relative;
   border-radius: 2em;
 }
+/*about us*/
+.about-us {
+  padding: 50px 20px;
+  background-image: url(./images/about.jpeg);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.about-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+.about-us p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.about-us .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.about-us .about-block {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-us .about-block h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #2980b9;
+}
+
+.about-us .about-block p,
+.about-us .about-block ul {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.about-us .about-block ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-us .about-block ul li {
+  margin-bottom: 10px;
+}
+
+.about-us .about-block:hover {
+  transform: translateY(-5px);
+}
 
 
 
