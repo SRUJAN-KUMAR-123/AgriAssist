@@ -25,16 +25,15 @@
         <ul class="nav-links">
           <i class="uil uil-times navCloseBtn"></i>
           <li><a href="{% url 'home' %}" class="active">Home</a></li>
-          
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/forum">Community</a></li>
           {% if not user.is_authenticated %}
             <li><a href="{% url 'selectuser' %}">Register</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
-          {% else %}
-            <li><a href="/shop">Shop</a></li>
           {% endif %}
           
           <li><a href="{% url 'about' %}">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <!-- <li><a href="#">Contact Us</a></li> -->
           <i class="uil uil-search search-icon" id="searchIcon"></i>
           <div class="search-box">
             <i class="uil uil-search search-icon"></i>
@@ -58,12 +57,30 @@
             </ul>
           </div>
         </div>
+        {% else %}
+        <div></div>
         {% endif %}
   	</nav>
 
 		{% block content %}
 
 		{% endblock %}
-		
+    {% if user.is_authenticated %}
+      {% if user.usertype|lower == 'farmer' %}
+      <script>
+        !(function(){const sc=document.createElement('script');sc.src="https://apps.voc.ai/api_v2/gpt/bots/livechat/embed.js?id=19132&token=67276627E4B0DD4BCF9FB24B";sc.async=true;sc.defer=true;document.body.appendChild(sc);})()
+      </script>
+      {% endif %}
+    {% endif %}
   </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+        $(document).scroll(function () {
+            var $nav = $(".nav");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+    
+    </script>
 </html>

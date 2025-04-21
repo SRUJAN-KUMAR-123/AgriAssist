@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models import Sum
 from django.shortcuts import reverse
+from login.models import CustomUser
 from django_countries.fields import CountryField
 
 # Create your models here.
@@ -50,6 +51,19 @@ class Category(models.Model):
         })
 
 
+class ItemVariants(models.Model):
+    quantity = models.CharField(max_length=50)
+
+    def __str__(self):
+        if len(list(self.item_set.all())) > 0:
+            item = self.item_set.all()[0]
+            return f"{item.id}: {item.title} - {self.quantity}"
+        return str(self.id)
+    
+    def get_quantity_data(self):
+        return self.quantity.split()[0]
+
+
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
@@ -63,6 +77,8 @@ class Item(models.Model):
     image = models.ImageField()
     image2 = models.ImageField(blank=True)
     image3 = models.ImageField(blank=True)
+    variants = models.ManyToManyField(ItemVariants)
+    created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

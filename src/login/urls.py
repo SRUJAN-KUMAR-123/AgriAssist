@@ -12,9 +12,11 @@ urlpatterns = [
     path('login', views.login_page, name="login"),
     path('logout', views.userLogout, name="logout"),
     path('loginvalidation', views.login_validation, name="loginvalidate"),
-    path('dashboard', views.dashboard, name="dashboard")
-    
-    
-    
-    # path('admin/', admin.site.urls),
+    path('dashboard', views.dashboard, name="dashboard"),
+    path('farmer/add-product', views.addProduct, name="addProduct"),
+    path('farmer/edit-product/<int:id>', views.editProduct, name="editProduct"),
+    path('farmer/products', views.viewProducts, name="viewProducts"),
+    path('api/product/add', views.addProductAPI, name="addProduct-api"),
+    path('api/product/edit/<int:id>', views.editProductAPI, name="editProduct-api"),
+    path('api/product/delete/<int:id>', views.deleteProductAPI, name="deleteProduct-api"),
 ]

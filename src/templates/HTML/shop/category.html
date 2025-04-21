@@ -81,7 +81,7 @@
 							</div>
 						</div>
 
-						<div class="filter-color p-t-22 p-b-50 bo3">
+						<!-- <div class="filter-color p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-12">
 								Color
 							</div>
@@ -122,7 +122,7 @@
 									<label class="color-filter color-filter7" for="color-filter7"></label>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 
 						<div class="search-product pos-relative bo4 of-hidden">
 							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
@@ -196,13 +196,17 @@
 							</a>
 
 								<div class="block2-txt p-t-20">
-									<a href="{{item.get_absolute_url}}" class="block2-name dis-block s-text3 p-b-5">
+									<a href="{{item.get_absolute_url}}" class="dis-block p-b-5">
 										{{item.title}}
 									</a>
 
-									<span class="block2-price m-text6 p-r-5">
+									<span class="block2-price m-text6 p-r-5 p-b-5">
 										₹{{item.price}}
 									</span>
+									<br>
+									<p class="s-text3 block2-name p-r-5" style="padding-top: 5px;">	
+										Sold by: {{item.created_by.name}}
+									</p>
 								</div>
 							</div>
 						</div>

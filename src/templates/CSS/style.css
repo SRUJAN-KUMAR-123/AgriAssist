@@ -41,7 +41,7 @@ body {
   font-size: 18.5px;
 }
 
-.nav  .nav-links a:hover{
+.nav .nav-links a:hover{
     font-size: larger;
     color:rgb(252, 252, 252);
     /* background-color: rgba(234, 234, 234, 0.553); */
@@ -49,9 +49,37 @@ body {
     padding: 5px;
 }
 
-/* .nav a.logo:hover{
+.nav.scrolled .nav-links a:hover{
+  font-size: larger;
+  color: rgb(76, 110, 235);
+  /* background-color: rgba(234, 234, 234, 0.553); */
+  border-radius: 5px;
+  padding: 5px;
+}
 
-} */
+.nav.scrolled {
+  background-color: #fff !important;
+  transition: background-color 300ms ease-in-out;
+  background-image: none;
+}
+
+.nav.scrolled .nav-links a:hover{
+  font-size: larger;
+  color: rgb(76, 110, 235);
+  /* background-color: rgba(234, 234, 234, 0.553); */
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.nav.scrolled {
+  background-color: #fff !important;
+  transition: background-color 300ms ease-in-out;
+  background-image: none;
+}
+
+.nav a.logo:hover{
+
+}
 
 .nav .logo {
   font-size: 25px;
@@ -711,6 +739,11 @@ body {
   border: 1px solid white;
 }
 
+.nav.scrolled .action .profile:hover {
+  transition: .3s ease-in-out;
+  border: 1px solid rgb(76, 110, 235);
+}
+
 .action .profile img {
   position: absolute;
   top: 0;
@@ -736,6 +769,12 @@ body {
   color: white !important;
 
 }
+
+.nav.scrolled .action i:hover {
+  transition: .3s ease-in-out;
+  color: rgb(76, 110, 235) !important;
+}
+
 .action .menu {
   z-index: 10;
   position: absolute;

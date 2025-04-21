@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uvr%8u=b3e-(as2bphp&irn*0n$)%-zab&c5n+*6gr4_xk(8el
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'shop',
+    'forum',
     'allauth',
     'crispy_forms',
     'django_countries'
@@ -83,7 +84,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "AgriAssist",
         "USER": "postgres",
-        "PASSWORD": "password",
+        "PASSWORD": "Srujan@123098",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
