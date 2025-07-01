@@ -129,6 +129,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "templates",
 ]
+STATIC_ROOT = Path.joinpath(BASE_DIR, "staticfiles_build", "static")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media_root')
 
