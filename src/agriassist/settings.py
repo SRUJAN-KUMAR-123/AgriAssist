@@ -84,8 +84,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "AgriAssist",
         "USER": "postgres",
-        "PASSWORD": "Srujan@123098",
-        "HOST": "127.0.0.1",
+        "PASSWORD": "pvmHQ38C1f79Tkm0",
+        "HOST": "db.ffuptymusslicacscguv.supabase.co",
         "PORT": "5432",
     }
 }
