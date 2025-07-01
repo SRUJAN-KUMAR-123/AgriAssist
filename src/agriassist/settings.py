@@ -75,12 +75,6 @@ TEMPLATES = [
     },
 ]
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", 
-    },
-}
-
 WSGI_APPLICATION = 'agriassist.wsgi.app'
 
 
@@ -145,7 +139,7 @@ STATICFILES_DIRS = [
 ]
 if not DEBUG:
     STATIC_ROOT = Path.joinpath(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media_root')
