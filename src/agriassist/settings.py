@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'agriassist.wsgi.application'
+WSGI_APPLICATION = 'agriassist.wsgi.app'
 
 
 # Database
