@@ -75,6 +75,12 @@ TEMPLATES = [
     },
 ]
 
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", 
+    },
+}
+
 WSGI_APPLICATION = 'agriassist.wsgi.app'
 
 
