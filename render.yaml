@@ -1,0 +1,22 @@
+databases:
+  - name: agriassist
+    plan: free
+    databaseName: agriassist_jgyi
+    user: admin
+
+services:
+  - type: web
+    plan: free
+    name: mysite
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn agriassist.wsgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: postgresql://admin:rnc8eoapXygczjCkIf9cDssqt3HHhl62@dpg-d1hvq1bipnbc73fqu45g-a/agriassist_jgyi
+        fromDatabase:
+          name: agriassist
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
