@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import dj_database_url
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,15 +82,21 @@ WSGI_APPLICATION = 'agriassist.wsgi.app'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "AgriAssist",
-        "USER": "postgres",
-        "PASSWORD": "pvmHQ38C1f79Tkm0",
-        "HOST": "db.ffuptymusslicacscguv.supabase.co",
-        "PORT": "5432",
-    }
+    'default': dj_database_url.config(
+        default='postgresql://admin:rnc8eoapXygczjCkIf9cDssqt3HHhl62@dpg-d1hvq1bipnbc73fqu45g-a/agriassist_jgyi',
+        conn_max_age=600
+    )
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "AgriAssist",
+#         "USER": "postgres",
+#         "PASSWORD": "pvmHQ38C1f79Tkm0",
+#         "HOST": "db.ffuptymusslicacscguv.supabase.co",
+#         "PORT": "5432",
+#     }
 }
+
+
 
 
 # Password validation
@@ -129,7 +137,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "templates",
 ]
-STATIC_ROOT = Path.joinpath(BASE_DIR, "staticfiles_build", "static")
+if not DEBUG:
+    STATIC_ROOT = Path.joinpath(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media_root')
 
