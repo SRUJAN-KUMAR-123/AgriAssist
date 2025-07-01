@@ -139,7 +139,7 @@ STATICFILES_DIRS = [
 ]
 if not DEBUG:
     STATIC_ROOT = Path.joinpath(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media_root')
