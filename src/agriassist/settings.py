@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'forum',
     'allauth',
     'crispy_forms',
-    'django_countries'
+    'django_countries',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
