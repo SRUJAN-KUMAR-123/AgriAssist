@@ -156,3 +156,11 @@ STRIPE_SECRET_KEY = 'sk_test_tn0CTDaIJHUJyAqhsf39cfsC00LNjsqDnb'
 
 
 LOGIN_URL = '/login'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dnnbc762p',
+    'API_KEY': '528693449169492',
+    'API_SECRET': 'Kc3-o2swe3aRVJupGEqUGSxpeX4'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
